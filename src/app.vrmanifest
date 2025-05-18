@@ -1,0 +1,18 @@
+{
+	"source": "builtin",
+	"applications": [
+		{
+			"app_key": "python1320.vr_audience_fire",
+			"launch_type": "binary",
+			"binary_path_windows": "./vr_audience_fire_NoConsole.exe",
+			"is_dashboard_overlay": true,
+
+			"strings": {
+				"en_us": {
+					"name": "vr_audience_fire",
+					"description": "Lets you catch on fire when someone breathes fire on you"
+				}
+			}
+		}
+	]
+}

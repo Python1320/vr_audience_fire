@@ -1,0 +1,23 @@
+{
+    "ip": "127.0.0.1",
+    "port": 9000,
+    "server_port": 0,
+    "http_port": 0,
+    "osc_detectors": {
+        "fire": "/avatar/parameters/fire",
+        "water": "/avatar/parameters/water"
+    },
+    "fire_messages": {
+        "/avatar/parameters/fire_effect": true,
+        "/avatar/parameters/water_effect": false,
+        "/avatar/parameters/MHoodie": false,
+        "/avatar/parameters/shorts": false
+    },
+    "water_messages": {
+        "/avatar/parameters/fire_effect": false,
+        "/avatar/parameters/water_effect": true
+    },
+    "water_off_messages": {
+        "/avatar/parameters/water_effect": false
+    }
+}

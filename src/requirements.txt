@@ -1,0 +1,6 @@
+python_osc
+zeroconf
+requests
+psutil
+toml
+openvr
