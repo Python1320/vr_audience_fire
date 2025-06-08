@@ -73,7 +73,7 @@ class OSCQueryNode():
 
         return foundNode
 
-    def add_child_node(self, child):
+    def path_lookup(self, child, auto_create=True):
         if child == self:
             return
 
@@ -88,15 +88,27 @@ class OSCQueryNode():
 
         parent = self.find_subnode(parent_path)
 
-        if parent is None:
+        if parent is None and auto_create:
             parent = OSCQueryNode(parent_path)
             self.add_child_node(parent)
-            
-        
+
+        return parent
+
+    def add_child_node(self, child):
+        parent = self.path_lookup(child)
+        if parent == None:
+            return
         if parent.contents is None:
             parent.contents = []
+
         parent.contents.append(child)
 
+    def remove_child_node(self, child):
+        parent = self.path_lookup(child, auto_create=False)
+        if parent == None or parent.contents == None:
+            return
+
+        parent.contents.remove(child)
     
     def to_json(self):
         return json.dumps(self, cls=OSCNodeEncoder)
