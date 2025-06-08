@@ -1,0 +1,7 @@
+*****_color.png: 
+ - https://openmoji.org 
+ - License: CC-BY-SA (see https://openmoji.org)
+
+ignition.ogg: 
+ - https://opengameart.org/
+ - License: CC0 (see metadata)
