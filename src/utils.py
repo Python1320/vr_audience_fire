@@ -39,7 +39,7 @@ def is_vrchat_running() -> bool:
 
 def fatal(msg, detail=None, nodecor=False):
 	if 'debugpy' in sys.modules:
-		raise Exception(str(msg))
+		raise  # Exception(str(msg))
 
 	# if os.name == 'nt':
 	# ctypes.windll.user32.MessageBoxW(0, traceback.format_exc(), 'vr_audience_fire - ERROR', 0)
