@@ -127,7 +127,7 @@ Material:
     - _specularBrightness: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 1, g: 0.5689324, b: 0, a: 1}
+    - _Color: {r: 1, g: 0.56943387, b: 0, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _DetColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 6.252811, g: 0.40879855, b: 0, a: 1}
