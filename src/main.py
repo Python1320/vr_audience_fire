@@ -1,26 +1,28 @@
 import logging
 import asyncio
-import json
 import os
 import sys
-import time
-import traceback
-import ctypes
-from typing import Any, List
 
 # vrchat_oscquery provides zeroconf
 import coloredlogs
 from pythonosc.dispatcher import Dispatcher
-from pythonosc.udp_client import SimpleUDPClient
 from vrchat_oscquery.common import vrc_client
 
 import openvr
-from pathlib import Path
 from datetime import datetime
 import config_reader
-from utils import fatal, exit as _exit, spawn_task, FROZEN, EXEDIR, DEBUGGER, show_console, vrc_osc
-
-print('VR Audience Fire starting...')
+from utils import (
+	fatal,
+	exit as _exit,
+	get_vr_system,
+	set_console_title,
+	spawn_task,
+	FROZEN,
+	EXEDIR,
+	DEBUGGER,
+	show_console,
+	vrc_osc,
+)
 
 
 NAME = 'vr_audience_fire'
@@ -46,6 +48,12 @@ if conf.debug and os.name == 'nt' and not HAS_TTY:
 
 
 class AudienceFire:
+	fire: bool
+	water: bool
+	water_last_changed: datetime | None
+	fire_last_changed: datetime | None
+	_water_task: asyncio.Task | None
+
 	def __init__(self):
 		self.fire = False
 		self.water = False
@@ -128,6 +136,9 @@ class AudienceFire:
 			await self.set_fire(True)
 
 
+set_console_title('VR Audience Fire')
+
+
 def exit(n=0):
 	_exit(n)
 
@@ -145,10 +156,12 @@ vrc = vrc_client()
 AVATAR_CHANGE_PARAMETER = '/avatar/change'
 
 
-def reg_openvr():
-	global application
+async def reg_openvr():
+	log.info('Registering OpenVR autostart...')
+	global overlay
 	try:
-		application = openvr.init(openvr.VRApplication_Utility)
+		_vr_system = await get_vr_system(openvr.VRApplication_Overlay, loop=main_loop)
+
 		log.info(
 			'Installing to SteamVR: %s %s',
 			EXEDIR / 'app.vrmanifest',
@@ -228,5 +241,5 @@ async def init_main():
 
 if __name__ == '__main__':
 	if conf.install_to_steamvr:
-		reg_openvr()
+		main_loop.run_until_complete(reg_openvr())
 	main_loop.run_until_complete(init_main())

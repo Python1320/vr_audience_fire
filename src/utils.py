@@ -2,6 +2,8 @@ import asyncio
 import os
 import sys
 import time
+import openvr
+import openvr.error_code
 from psutil import process_iter
 
 import ctypes
@@ -10,7 +12,6 @@ import logging
 
 from pathlib import Path
 
-import asyncio
 from aiohttp import web
 from zeroconf.asyncio import AsyncZeroconf
 from pythonosc.osc_server import AsyncIOOSCUDPServer
@@ -176,7 +177,7 @@ async def vrc_osc(name: str, dispatcher: Dispatcher, foreground=False, zeroconf=
 
 			return web.Response(body=_oscjson_response(req.path_qs, osc_port))
 
-		app.add_routes([web.get('/', req_handler)])
+		app.add_routes([web.get('/', req_handler)])  # type: ignore
 		runner = web.AppRunner(app)
 		await runner.setup()
 		await web.TCPSite(runner, host, http_port).start()
@@ -188,6 +189,56 @@ async def vrc_osc(name: str, dispatcher: Dispatcher, foreground=False, zeroconf=
 
 	client = VRCOSCClient(osc_port=osc_port, osc_host=host, http_port=http_port)
 	return client
+
+
+vr_system_fut: asyncio.Future[openvr.IVRSystem]
+
+
+async def _get_vr_system(app_type=openvr.VRApplication_Overlay):
+	if not vr_system_fut:
+		raise RuntimeError('Future not initialized')
+
+	if vr_system_fut.done():
+		raise RuntimeError('VR System already initialized')
+	init_errored = False
+	for i in range(999999):
+		try:
+			vr_system = openvr.init(app_type)
+			vr_system_fut.set_result(vr_system)
+			logging.info('OpenVR initialized successfully')
+			break
+		except openvr.error_code.InitError_Init_VRClientDLLNotFound:
+			raise
+		except openvr.error_code.InitError_Init_NoServerForBackgroundApp:
+			if not init_errored:
+				init_errored = True
+				print('Waiting for SteamVR...')
+		except Exception as e:
+			fatal(f'Failed to initialize OpenVR: {e}')
+		await asyncio.sleep(2.1)
+
+
+vr_system_first = True
+
+
+async def get_vr_system(
+	app_type=openvr.VRApplication_Overlay, loop: asyncio.AbstractEventLoop | None = None
+) -> openvr.IVRSystem:
+	global vr_system_first, vr_system_fut
+	if vr_system_first:
+		vr_system_first = False
+		assert loop is not None, 'Loop must be provided on first call'
+		vr_system_fut = asyncio.Future(loop=loop)
+		spawn_task(_get_vr_system(app_type))
+	await vr_system_fut
+	return vr_system_fut.result()
+
+
+def set_console_title(title: str):
+	if os.name == 'nt':
+		ctypes.windll.kernel32.SetConsoleTitleW(title)
+	else:
+		print(f'\033]0;{title}\a', end='', flush=True)
 
 
 if __name__ == '__main__':
