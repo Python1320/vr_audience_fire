@@ -16,7 +16,7 @@ setup(
 	description='Lets you catch on fire',
 	options={'build_exe': build_exe_options},
 	executables=[
-		Executable('main.py', target_name='vr_audience_fire.exe', base=False),
-		Executable('main.py', target_name='vr_audience_fire_NoConsole.exe', base='Win32GUI'),
+		Executable('main.py', target_name='vr_audience_fire.exe', base='console', icon='../icon.ico'),
+		Executable('main.py', target_name='vr_audience_fire_NoConsole.exe', base='Win32GUI', icon='../icon.ico'),
 	],
 )
