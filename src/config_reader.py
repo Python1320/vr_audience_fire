@@ -50,6 +50,7 @@ class AppConfig(BaseSettings):
 	zeroconf: bool = True
 	debug: bool = False
 	install_to_steamvr: bool = True
+	run_count: int | None = None
 
 	@classmethod
 	def settings_customise_sources(

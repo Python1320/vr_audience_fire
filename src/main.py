@@ -40,11 +40,13 @@ log.addHandler(fileHandler)
 log.debug('Logging to %s', LOGFILE)
 
 conf = config_reader.get_config()
+conf.run_count = (conf.run_count or 0) + 1
+config_reader.save_config(conf)
 
 
 if conf.debug and os.name == 'nt' and not HAS_TTY:
 	show_console()
-	logging.basicConfig(level=logging.DEBUG)
+	logging.basicConfig(level=logging.DEBUG, force=True)
 
 
 class AudienceFire:
