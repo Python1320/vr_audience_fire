@@ -61,8 +61,9 @@ The steps are mostly the same as here https://morghus.gumroad.com/l/cugahoodie (
 	  - The package includes a script that will automatically setup sounds to correct hand bones. No manual setup should be necessary.
       - Do not disable the "VRPets Prefab" object itself as the pets will not work properly
  6. Run build and test or republish your avatar
+ 7. Remember to enable OSC and to regenerate OSC config!
 
-  - VRCFury will automatically add a new [expression menu](https://docs.vrchat.com/docs/action-menu#expression-menu) entry and you will be able to toggle the pets on and off there. Test it in game and see if it works. 
+  - VRCFury will automatically add a new [expression menu](https://docs.vrchat.com/docs/action-menu#expression-menu) entry and you will be able to toggle the fire on and off there. Test it in game and see if it works. 
 
 **App**
  1. Extract the latest zip file into a folder, launch the executable.
@@ -91,7 +92,3 @@ https://github.com/python1320/vr_audience_fire/issues
 This is a hobby for me, paying only gives you access to the asset files. Payment does not give support. I may or may not have time to look at github issues but that's about it.
 No warranty of any kind!
 I cannot afford supporting you, and you cannot afford my support, sorry. Feel free to ask someone else to fix things for you.
-
-### Licenses
-
-Icons by TODO
