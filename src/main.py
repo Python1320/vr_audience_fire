@@ -23,9 +23,11 @@ from utils import (
 	show_console,
 	vrc_osc,
 )
-
+from tendo import singleton
 
 NAME = 'vr_audience_fire'
+
+# === Logging madness ====
 LOGFILE = EXEDIR / 'debug.log'
 HAS_TTY = sys.stdout and sys.stdout.isatty()
 if HAS_TTY:
@@ -39,7 +41,18 @@ log.addHandler(fileHandler)
 
 log.debug('Logging to %s', LOGFILE)
 
+# === Load configuration, singleton handling ===
 conf = config_reader.get_config()
+try:
+	me = singleton.SingleInstance(lockfile=f'{NAME}.lock')
+except singleton.SingleInstanceException:
+	fatal(
+		'Another instance of this program is already running!',
+		detail=f'Another instance of this program is already running. If you are sure that this is not the case, delete the lock file {NAME}.lock in the current directory and try again.',
+		nodecor=True,
+	)
+	os._exit(1)
+
 conf.run_count = (conf.run_count or 0) + 1
 config_reader.save_config(conf)
 
