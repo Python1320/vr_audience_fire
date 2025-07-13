@@ -1,6 +1,6 @@
 .venv/
 __pycache__/
-build/      
+build/
 /*.log
 /src/tinyoscquery__orig
 *.log

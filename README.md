@@ -79,6 +79,8 @@ The steps are mostly the same as here https://morghus.gumroad.com/l/cugahoodie (
  3. Use [OSC Debug](https://docs.vrchat.com/docs/osc-debugging) to see if are receiving any data
  4. Make sure your VRChat SDK is updated in the companion app! VRCFury usually requires the latest VRChat SDK.
 
+The application generates a `debug.log` file on start. This can provide clues on what is wrong.
+
 ### Known Issues
 
 https://github.com/python1320/vr_audience_fire/issues
@@ -86,6 +88,12 @@ https://github.com/python1320/vr_audience_fire/issues
 ### How to change the sounds
 
  - Navigate to the prefab and into the fire and just replace the sound file with your own
+
+### Helper app automatic start
+
+After launching the helper exe succesfully once, you should be able to enable autostart in SteamVR:
+![steamvr settings has autostart option](docs/autostart.png)
+
 
 ### NO SUPPORT NO WARRANTY
 
