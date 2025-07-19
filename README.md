@@ -29,12 +29,24 @@ Catch on low poly fire in VR, get extinguished by water sprays and drip water.
 
 https://vrchat.com/home/avatar/avtr_48cccc45-f524-4a8a-9521-368252334959
 
+### Parameters
+
+| path                            | type | Dir           |
+|---------------------------------|------|---------------|
+| /avatar/parameters/fire         | bool | input         |
+| /avatar/parameters/fire_effect  | bool | output/effect |
+| /avatar/parameters/water        | bool | input         |
+| /avatar/parameters/water_effect | bool | output/effect |
+
+**Networked/Synced**: 2 bits
+
 ### Compatible addons 
 
 These addons can extinguish you or make you catch on fire (be warned!)
 
  - [Spray Bottle for VRC](https://jinxxy.com/market/listings/3292261612823512778) (free)
  - [Fire-Breathing & Flame Sneeze](https://violentpainter.gumroad.com/l/vfx-firebreathing)
+ - [Allow others to use voice command to make you catch on fire](https://github.com/Python1320/vr_audience_control)
 
 TODO: Better fire particle addon
 
