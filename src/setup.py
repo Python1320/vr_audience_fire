@@ -1,4 +1,5 @@
 from cx_Freeze import setup, Executable
+import shutil
 
 packages = ['pythonosc', 'psutil', 'zeroconf', 'json', 'threading', 'time', 'os', 'sys', 'ctypes', 'traceback']
 file_include = ['config.json', 'app.vrmanifest']
@@ -8,7 +9,7 @@ build_exe_options = {
 	'include_files': file_include,
 	'include_msvcr': False,
 	'optimize': 0,
-	'build_exe': '../build',
+	'build_exe': '../vr_audience_fire_helper',
 }
 
 setup(
@@ -21,3 +22,6 @@ setup(
 		Executable('main.py', target_name='vr_audience_fire_console.exe', base='console', icon='../icon.ico'),
 	],
 )
+
+
+shutil.make_archive('../vr_audience_fire_helper', 'zip', '../vr_audience_fire_helper')
