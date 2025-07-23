@@ -1,0 +1,26 @@
+name: Test build
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Building helper
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+
+    steps:
+    - name: Clone repo
+      uses: actions/checkout@v4
+
+    - name: Install uv and set the python version
+      uses: astral-sh/setup-uv@v4
+      with:
+        version: "0.5.11"
+        python-version: 3.13
+
+    - name: build
+      run: build.cmd

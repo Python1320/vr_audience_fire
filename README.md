@@ -20,6 +20,7 @@ Makes you combustible in VRChat. Also get extinguished by water sprays.
 
  - Allow you to send fire
  - Respawn afterwards
+ - Fires in worlds cannot make you catch on fire. Worlds cannot have contact senders :(
 
 ### How does it work
 When someone uses a flame thrower, they have a [contact sender](https://creators.vrchat.com/avatars/avatar-dynamics/contacts/) with tag "fire". Your avatar then has a contact receiver (from this addon's prefab) with the same tag "fire" which sets an avatar parameter "fire" temporarily. This is relayed via [OSC](https://docs.vrchat.com/docs/osc-overview) to helper application, which sends another OSC message back to VRChat to turn on [boolean avatar parameter](https://creators.vrchat.com/avatars/animator-parameters/) named `fire_effect`, which stays on, and is networked to other players so they can see fire. This networked status can then be used to turn on a fire gameobject (from the prefab), which has a fire particle effect.
@@ -36,10 +37,10 @@ Additional ideas can be programmed to the helper application, like eventual rand
  - [Unity editor](https://creators.vrchat.com/sdk/current-unity-version/) for avatars 
  - [VRCFury](https://vrcfury.com/getting-started)
 
-### Test Avatar(s) 😎
+### Test Avatar(s) 🎭
 
  - **Receiving fire**:
-    - [Free ASMR Demo Avatar: Nargacuga](https://vrchat.com/home/avatar/avtr_48cccc45-f524-4a8a-9521-368252334959) [(source)](https://www.vrcarena.com/assets/ZszLG-toastacuga)
+    - [Free ASMR Demo Avatar: Nargacuga](https://vrchat.com/home/avatar/avtr_48cccc45-f524-4a8a-9521-368252334959) ([source](https://www.vrcarena.com/assets/ZszLG-toastacuga))
  - **Sending avatars**
     - [Fire breathing asset](https://violentpainter.gumroad.com/l/vfx-firebreathing) has demo avatars in description
  - [Help by recommending public avatars](https://github.com/Python1320/vr_audience_fire/issues/1)
@@ -67,9 +68,9 @@ These addons can extinguish you or make you catch on fire (be warned!)
 
 TODO: Better fire particle addon
 
-### VRChat Group(s)
+### VRChat Group(s) 👨‍👨‍👦‍👦
 
- - [Combustible](https://vrchat.com/home/group/grp_2e0126aa-fe02-402b-88c9-6d96f14fdf21)
+ - [Combustible](https://vrchat.com/home/group/grp_2e0126aa-fe02-402b-88c9-6d96f14fdf21) - find if someone might be combustible or get help testing
 
 ### Installation Video Help 📹
 
