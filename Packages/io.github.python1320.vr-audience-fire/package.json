@@ -1,9 +1,8 @@
 {
   "displayName": "VR Audience Fire",
   "description": "Add catching on fire and water logic to avatar (requires external app)",
-  "name": "io.github.python1320.vr_audience_fire",
+  "name": "io.github.python1320.vr-audience-fire",
   "version": "0.9.0",
-  "unity": "2019.4",
   "hideInEditor": false,
   "author": {
     "name": "Python1320",

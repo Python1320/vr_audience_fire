@@ -1,5 +1,5 @@
 {
-  "name": "io.github.python1320.vraf",
+  "name": "io.github.python1320.vr-audience-fire",
   "references": [
     "VRC.SDK3A",
     "VRC.SDKBase"

@@ -74,7 +74,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 3b9fed8f0a77e374bb431095234078c0|Packages/io.github.python1320.vraf/Runtime/vr_audience_fire_params.asset
+            id: 3b9fed8f0a77e374bb431095234078c0|Packages/io.github.python1320.vr-audience-fire/Runtime/vr-audience-fire_params.asset
             objRef: {fileID: 11400000, guid: 3b9fed8f0a77e374bb431095234078c0, type: 2}
         smoothedPrms: []
         globalParams:
@@ -253,7 +253,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 7882d3b5d6cd70648bdb266ecc30666f|Packages/io.github.python1320.vraf/Runtime/extra/1FA84_color.png
+          id: 7882d3b5d6cd70648bdb266ecc30666f|Packages/io.github.python1320.vr-audience-fire/Runtime/extra/1FA84_color.png
           objRef: {fileID: 2800000, guid: 7882d3b5d6cd70648bdb266ecc30666f, type: 3}
 --- !u!114 &9119287072569262685
 MonoBehaviour:
@@ -287,7 +287,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: db44f06b6c4aeee47a9da8f49b7d0735|Packages/io.github.python1320.vraf/Runtime/extra/1F9F3_color.png
+          id: db44f06b6c4aeee47a9da8f49b7d0735|Packages/io.github.python1320.vr-audience-fire/Runtime/extra/1F9F3_color.png
           objRef: {fileID: 2800000, guid: db44f06b6c4aeee47a9da8f49b7d0735, type: 3}
 --- !u!1 &2569155473148707921
 GameObject:
@@ -5199,7 +5199,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 98a557062a3136545a6c06fc1f1fa1bb|Assets/vr_audience_fire/1F525_color.png
+          id: 98a557062a3136545a6c06fc1f1fa1bb|Assets/vr-audience-fire/1F525_color.png
           objRef: {fileID: 2800000, guid: 98a557062a3136545a6c06fc1f1fa1bb, type: 3}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
@@ -10307,7 +10307,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 5acf49382f5323d4a8848a643dbc2de0|Assets/vr_audience_fire/1F30A_color.png
+          id: 5acf49382f5323d4a8848a643dbc2de0|Assets/vr-audience-fire/1F30A_color.png
           objRef: {fileID: 2800000, guid: 5acf49382f5323d4a8848a643dbc2de0, type: 3}
         enableDriveGlobalParam: 0
         driveGlobalParam: 
