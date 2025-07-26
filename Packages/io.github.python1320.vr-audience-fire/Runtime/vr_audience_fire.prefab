@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -5166,7 +5166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
@@ -5248,18 +5248,18 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dfaa13b059e5f6b4e94d8eef0610a7d9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.447
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 1.9
+  MinDistance: 0.5
+  MaxDistance: 2
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -5292,7 +5292,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5307,7 +5307,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5345,11 +5345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gain: 10
-  Far: 4.19
+  Far: 1.7
   Near: 0
   VolumetricRadius: 0
   EnableSpatialization: 1
-  UseAudioSourceVolumeCurve: 0
+  UseAudioSourceVolumeCurve: 1
 --- !u!1 &4873024225292123181
 GameObject:
   m_ObjectHideFlags: 0
@@ -10274,7 +10274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 3
   unityVersion: 2022.3.22f1
-  vrcfuryVersion: 1.1240.0
+  vrcfuryVersion: 1.1238.0
   somethingIsBroken: 0
   config:
     features: []
