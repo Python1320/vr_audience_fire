@@ -68,7 +68,16 @@ jobs:
         with:
           package-path: ${{ env.unityPackage }}
           include-files: metaList
-      
+        
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.5.11"
+          python-version: 3.13
+
+      - name: build
+        run: ./build.cmd
+        
       # Make a release tag of the version from the package.json file 
       - name: Create Tag
         id: tag_version

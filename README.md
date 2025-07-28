@@ -76,39 +76,41 @@ TODO: Better fire particle addon
 
  - [Using VRCFury prefab assets in Unity](https://www.youtube.com/watch?v=QDvzfLa82yI)
 
-### Installation Instructions ℹ️
+### Installation ℹ️
 
-TODO 
-
-The steps are mostly the same as here https://morghus.gumroad.com/l/cugahoodie (replace with vr_audience_fire.unitypackage)
+**NOTE**: *Help improve the introductions by [updating this readme](https://github.com/Python1320/vr_audience_fire/edit/main/README.md)*
 
 **Unity**
 
- 1. Install Creator Companion and [VRCFury](https://vrcfury.com/getting-started)
- 2. Download the unitypackage and import it
- 3. TAKE A BACKUP OF YOUR AVATAR HERE
- 4. Import the downloaded `.unitypackage`: 
-   - double click the package
-   - ... or in Unity: Menu Assets -> Import Package -> Custom Package
- 5. Drag the imported prefab into the scene
-   - Locate the TODO directory in the Project tab, within you'll find a "TODO" object. 
-      - Click and drag it onto the main Avatar object in your Hierarchy. It should be a direct child of the object.
-	  - Once the prefab has been put in the correct place, it should show up on your avatar in the Scene view.
-	  - The package includes a script that will automatically setup sounds to correct hand bones. No manual setup should be necessary.
-      - Do not disable the "VRPets Prefab" object itself as the pets will not work properly
- 6. Run build and test or republish your avatar
- 7. Remember to enable OSC and to regenerate OSC config!
+ 1. Install [Creator Companion](https://vcc.docs.vrchat.com/) and add [VRCFury](https://vrcfury.com/getting-started).   
+     You also need your avatar as a project!   
 
-  - VRCFury will automatically add a new [expression menu](https://docs.vrchat.com/docs/action-menu#expression-menu) entry and you will be able to toggle the fire on and off there. Test it in game and see if it works. 
+ 2. In creator companion
+    1. Add `vr_audience_fire` by pressing "add to VCC" in [this](https://python1320.github.io/vr_audience_fire/) page.
+    2. Install the "VR Audience Fire" package to your avatar. (*Remember to install VRCfury if not already installed!*)
+    3. Open the avatar in unity
 
+ 3. Recommended: backup avatar now!
 
-**ADDITIONAL STEP IN UNITY: FIX WATER AND FIRE**
-
-To make the prefab's fire surround your avatar, you need to tell it which mesh should be used for fire emission. 
+ 4. Find the audience fire package and prefab inside it and drag and drop it into the avatar (note: the prefab must be put under avatar in the hierarchy but NOT inside armature/body, see picture):
+ ![avatar drag and drop to hierarchy](docs/prefab_drag_and_drop.png)
+ 
+ 5. To make the prefab's fire surround your avatar, you need to tell it which mesh should be used for fire emission.   
 Do this for both water and fire:
 ![set particle effect fire to](docs/set_particle_shape.png)
 
-**Helper Application**
+ 6. optional: the prefab comes with an example sound effect, you may want to remove it (go under the prefab in hierarchy and remove the audio component from the fire game object)
+
+ 7. Optional: test with [gesture manager](https://github.com/BlackStartx/VRC-Gesture-Manager?tab=readme-ov-file#how-to-use-sdk-30)
+ 
+ 8. Publish your avatar
+
+ 9. Remember to enable OSC and to regenerate OSC config in VR!
+
+  - VRCFury will automatically add a new [expression menu](https://docs.vrchat.com/docs/action-menu#expression-menu) entry and you will be able to toggle the fire on and off there. Test it VRChat and see if it works. 
+
+
+**Helper Application** 🛠️ *(required)*
  1. Download the latest `vr_audience_fire_helper.zip` from [releases](https://github.com/Python1320/vr_audience_fire/releases)
  2. Extract the ZIP file to somewhere
  4. Run `vr_audience_fire.exe` once. *If unsure you can run it a second time and it will give an error about already running. If this does not happen the program is somehow crashing.*
@@ -116,6 +118,7 @@ Do this for both water and fire:
  6. In case of trouble run `vr_audience_fire_console.exe` to see debug output. You may also need to set debug to true in `config.json`
  7. Look in [`config.json`](https://github.com/Python1320/vr_asmr_petting/blob/main/src/config.json) for additional settings.
  8. The program quits when SteamVR quits
+ 9. Optional: Enable helper autostart in SteamVR settings 
 
 ### Troubleshooting 🎯
 
