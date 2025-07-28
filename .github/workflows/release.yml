@@ -22,10 +22,39 @@ jobs:
           echo "configPackage=false" >> $GITHUB_OUTPUT;
         fi
 
+  build_helper:
+    runs-on: windows-latest
+    needs: config
+    permissions:
+      contents: write
+    env:
+      packagePath: Packages/${{ vars.PACKAGE_NAME }}
+    if: needs.config.outputs.config_package == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
+      
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.5.11"
+          python-version: 3.13
+
+      - name: build
+        run: |
+          cd src
+          uv run python setup.py build
+
+      - name: Store artifact for release in next job
+        uses: actions/upload-artifact@v4
+        with:
+          name: helper
+          path: vr_audience_fire_helper.zip
+        
   # Build and release the Package
   # If the repository is not configured properly, this job will be skipped
   build:
-    needs: config
+    needs: [config, build_helper]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -68,16 +97,12 @@ jobs:
         with:
           package-path: ${{ env.unityPackage }}
           include-files: metaList
-        
-      - name: Install uv and set the python version
-        uses: astral-sh/setup-uv@v4
+                
+      - name: Get helper app zip from previous job
+        uses: actions/download-artifact@v4
         with:
-          version: "0.5.11"
-          python-version: 3.13
+          name: helper
 
-      - name: build
-        run: ./build.cmd
-        
       # Make a release tag of the version from the package.json file 
       - name: Create Tag
         id: tag_version
@@ -93,4 +118,5 @@ jobs:
             ${{ env.zipFile }}
             ${{ env.unityPackage }}
             ${{ env.packagePath }}/package.json
+            vr_audience_fire_helper.zip
           tag_name: ${{ env.version }}
