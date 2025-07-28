@@ -16,6 +16,8 @@ Makes you combustible in VRChat. Also get extinguished by water sprays.
  - VRCFury Unity Avatar drag-and-drop prefab to become combustible 📦
  - Open source utility application (needed for automatic fire triggering!) 🛠️
 
+**🛑 NOT YET COMPATIBLE WITH QUEST 🛑**
+
 ### What it does not do 🛑
 
  - Allow you to send fire
@@ -92,7 +94,7 @@ Do this for both water and fire:
  
  6. **Troubleshooting:** In case of trouble, run `vr_audience_fire_console.exe` to see debug output. You may also need to set debug to true in `config.json`
  
- 7. **Advanced**: Look in [`config.json`](https://github.com/Python1320/vr_asmr_petting/blob/main/src/config.json) for additional settings.
+ 7. **Advanced**: Look in [`config.json`](https://github.com/Python1320/vr_audience_fire/blob/main/src/config.json) for additional settings.
  
  8. **Note:** The program quits when SteamVR quits
  
@@ -108,8 +110,9 @@ Do this for both water and fire:
  2. [Enable OSC](https://docs.vrchat.com/docs/osc-overview#enabling-it)
  3. Use [OSC Debug](https://docs.vrchat.com/docs/osc-debugging) to see if are receiving any data
  4. Make sure your VRChat SDK is updated in the companion app! VRCFury usually requires the latest VRChat SDK.
+ 5. Check that antivirus 🛡️ and firewall 🔒👮 are not blocking the helper application!
 
-The application generates a `debug.log` file on start. This can provide clues on what is wrong.
+**HINT:** *The application generates a `debug.log` file on start if debug is enabled. This can provide clues on what is wrong. You should include this file with bug reports, thank you!*  
 
 ### Known Issues 📌
 
