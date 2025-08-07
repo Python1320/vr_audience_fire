@@ -140,7 +140,7 @@ Extinguish works the same, but turns off fire effect, etc.
 
  - **Receiving fire**:
     - [Free ASMR Demo Avatar: Nargacuga](https://vrchat.com/home/avatar/avtr_48cccc45-f524-4a8a-9521-368252334959) ([source](https://www.vrcarena.com/assets/ZszLG-toastacuga))
- - **Sending avatars**
+ - **Sending fire**
     - [Fire breathing asset](https://violentpainter.gumroad.com/l/vfx-firebreathing) has demo avatars in description
  - [Help by recommending public avatars](https://github.com/Python1320/vr_audience_fire/issues/1)
 
